@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="font-sans">
+
+ 
+  <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('DSC08164.JPG');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4 text-center -mt-8" data-aos="fade-down">
+      <h2 class="text-white text-xl md:text-2xl mb-2">THE WEDDING CEREMONY OF</h2>
+      <h1 class="text-white text-4xl md:text-6xl font-bold mb-2"> WIDIANTARA & ARPIYANTI</h1>
+      <p class="text-white text-lg md:text-2xl mt-8">20 Juli 2025</p>
+      <button onclick="showInvitation()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition mt-[350px]">
+        Invitation
+      </button>
+    </div>
+  </div>
+
+
+  <div id="invitation" class="hidden">
+
+ 
+    <section
+    data-aos="fade-up"
+    class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-cover bg-center bg-no-repeat"
+    style="background-image: url('img/DSC08171.JPG');"
+  >
+    <div class=" bg-opacity-70 p-6 rounded-lg">
+      <h1 class="text-4xl md:text-6xl font-bold text-blue-800">Undangan Pernikahan</h1>
+      <p class="mt-4 text-lg md:text-xl mt-[450px] text-gray-700">
+        Kami mengundang Anda untuk hadir di hari bahagia kami
+      </p>
+    </div>
+  </section>
+  
+
+    <!-- Groom Section -->
+    <section data-aos="fade-right" class="py-12 px-6 bg-white text-center">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengantin Pria</h2>
+      <img src="https://via.placeholder.com/200x200.png?text=Groom" alt="Groom" class="mx-auto rounded-full w-40 h-40 object-cover mb-4 shadow-md">
+      <p class="text-gray-700">Andi</p>
+      <p class="text-gray-500">Putra dari Bapak Joko & Ibu Siti</p>
+    </section>
+
+    <!-- Bride Section -->
+    <section data-aos="fade-left" class="py-12 px-6 bg-blue-50 text-center">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Pengantin Wanita</h2>
+      <img src="https://via.placeholder.com/200x200.png?text=Bride" alt="Bride" class="mx-auto rounded-full w-40 h-40 object-cover mb-4 shadow-md">
+      <p class="text-gray-700">Sinta</p>
+      <p class="text-gray-500">Putri dari Bapak Agus & Ibu Lina</p>
+    </section>
+
+    <!-- Place & Time Section -->
+    <section data-aos="zoom-in" class="py-12 px-6 bg-white text-center">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Place & Time</h2>
+      <p class="text-gray-700 mb-2"><strong>📅 Tanggal:</strong> 20 Juli 2025</p>
+      <p class="text-gray-700 mb-2"><strong>⏰ Waktu:</strong> 10.00 WIB - Selesai</p>
+      <p class="text-gray-700 mb-4"><strong>📍 Lokasi:</strong> Gedung Serbaguna Mawar, Jakarta</p>
+      <a href="https://maps.google.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition">
+        Location
+      </a>
+    </section>
+
+    <!-- Couple Photo -->
+    <section data-aos="fade-up" class="py-12 px-6 bg-blue-100 text-center">
+      <img src="https://via.placeholder.com/600x400.png?text=Foto+Couple" alt="Couple" class="mx-auto rounded-lg w-full max-w-2xl object-cover shadow-lg">
+    </section>
+
+    <!-- Countdown Timer -->
+    <section data-aos="fade-up" class="py-12 px-6 bg-white text-center">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Countdown to Our Day</h2>
+      <div id="countdown" class="text-3xl font-mono text-blue-600"></div>
+    </section>
+
+    <!-- Comments / Guestbook -->
+    <section data-aos="fade-up" class="py-12 px-6 bg-blue-50 max-w-xl mx-auto">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4 text-center">Leave a Message</h2>
+      <form id="commentForm" class="space-y-4">
+        <textarea id="commentInput" rows="3" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Kirim doa dan harapan kamu..."></textarea>
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">Submit</button>
+      </form>
+      <ul id="commentsList" class="mt-6 space-y-4">
+        <!-- comments will appear here -->
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer data-aos="fade-up" class="py-6 bg-gray-100 text-center text-sm text-gray-600">
+      &copy; 2025 Undangan Digital by Anda
+    </footer>
+  </div>
+
+  <!-- AOS Script and Initialization -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    function showInvitation() {
+      document.getElementById('landing').classList.add('hidden');
+      document.getElementById('invitation').classList.remove('hidden');
+      startCountdown();
+    }
+
+    // Countdown
+    function startCountdown() {
+      const targetDate = new Date('2025-07-20T10:00:00');
+      const el = document.getElementById('countdown');
+      function update() {
+        const now = new Date();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+          el.textContent = 'Hari ini adalah hari bahagia kami!';
+          clearInterval(interval);
+          return;
+        }
+        const days = Math.floor(diff / (1000*60*60*24));
+        const hrs  = Math.floor((diff/(1000*60*60)) % 24);
+        const mins = Math.floor((diff/(1000*60)) % 60);
+        const secs = Math.floor((diff/1000) % 60);
+        el.textContent = `${days}d ${hrs}h ${mins}m ${secs}s`;
+      }
+      update();
+      const interval = setInterval(update, 1000);
+    }
+
+    // Guestbook comments
+    document.getElementById('commentForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const txt = document.getElementById('commentInput');
+      if (!txt.value.trim()) return;
+      const li = document.createElement('li');
+      li.className = 'border border-gray-200 rounded-lg p-3 bg-white';
+      li.textContent = txt.value.trim();
+      document.getElementById('commentsList').appendChild(li);
+      txt.value = '';
+    });
+  </script>
+
+</body>
+</html>
