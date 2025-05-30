@@ -7,12 +7,52 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    /* Loading Screen Styles */
+    #loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+      color: #fff;
+      font-family: sans-serif;
+    }
+    #loading-screen .percent {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    #loading-screen .bar {
+      width: 80%;
+      height: 10px;
+      background: #444;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    #loading-screen .bar-inner {
+      height: 100%;
+      width: 0;
+      background: #3b82f6;
+      transition: width 0.3s ease;
+    }
+  </style>
 </head>
 <body class="font-sans overflow-x-hidden">
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="percent" id="percent">0%</div>
+    <div class="bar"><div class="bar-inner" id="bar-inner"></div></div>
+  </div>
 
   <!-- Landing -->
-  <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('DSC08164.JPG');">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4 text-center -mt-8" data-aos="fade-down">
+  <div id="landing" class="fixed inset-0 bg-cover bg-center hidden" style="background-image: url('DSC08164.JPG');">
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4 text-center" data-aos="fade-down">
       <h2 class="text-white text-xl md:text-2xl mb-2">THE WEDDING CEREMONY OF</h2>
       <h1 class="text-blue-700 text-4xl md:text-6xl font-bold mb-2">WIDIANTARA & ARPIYANTI</h1>
       <p class="text-white text-lg md:text-2xl mt-8">27 Juni 2025</p>
@@ -22,11 +62,7 @@
 
   <div id="invitation" class="hidden">
     <!-- Hero Section -->
-    <section
-      data-aos="fade-up"
-      class="relative min-h-screen flex justify-end items-end text-center bg-cover bg-center bg-no-repeat animate-zoom"
-      style="background-image: url('img/DSC08115 copy.jpg');"
-    >
+    <section data-aos="fade-up" class="relative min-h-screen flex justify-end items-end text-center bg-cover bg-center bg-no-repeat animate-zoom" style="background-image: url('img/DSC08115 copy.jpg');">
       <div class="absolute inset-0 bg-black bg-opacity-50"></div>
       <div class="relative z-10 p-6 rounded-lg mb-10 text-white">
         <p class="text-lg md:text-xl tracking-widest uppercase">The Wedding Ceremony Of</p>
@@ -44,15 +80,12 @@
 
     <!-- Couple Info -->
     <section class="py-16 px-6 flex justify-center items-center">
-      <div data-aos="zoom-in" class="relative bg-blue-900 backdrop-blur-md shadow-lg border border-white/30 w-full max-w-5xl px-10 py-12 text-center 
-                  flex flex-col md:flex-row items-center justify-around 
-                  rounded-b-full rounded-t-3xl">
-
+      <div data-aos="zoom-in" class="relative bg-blue-900 backdrop-blur-md shadow-lg border border-white/30 w-full max-w-5xl px-10 py-12 text-center flex flex-col md:flex-row items-center justify-around rounded-b-full rounded-t-3xl">
         <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/60 rounded-full"></div>
 
         <!-- Groom -->
         <div class="flex flex-col items-center max-w-xs">
-          <img src="img/DSC08048.JPG" alt="Groom" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
+          <img src="img/DSC08048.JPG" alt="Kadek Widiantara" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
           <h3 class="text-lg font-bold text-white tracking-wide">Kadek Widiantara</h3>
           <p class="text-white/80 text-sm italic">Putra kedua dari</p>
           <p class="text-white font-medium text-sm">Bapak I Nyoman Sarjana</p>
@@ -67,7 +100,7 @@
 
         <!-- Bride -->
         <div class="flex flex-col items-center max-w-xs">
-          <img src="img/DSC08067.JPG" alt="Bride" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
+          <img src="img/DSC08067.JPG" alt="Ni Made Arpiyanti" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
           <h3 class="text-lg font-bold text-white tracking-wide">Ni Made Arpiyanti</h3>
           <p class="text-white/80 text-sm italic">Putri kedua dari</p>
           <p class="text-white font-medium text-sm">Bapak I Nengah Rauh</p>
@@ -89,33 +122,19 @@
 
     <!-- Couple Photo -->
     <section data-aos="fade-up" class="py-12 px-6 bg-blue-100 text-center">
-      <img src="img/DSC08144 copy.jpg" alt="Couple" class="mx-auto rounded-lg w-full max-w-2xl object-cover shadow-lg">
+      <img src="img/DSC08144 copy.jpg" alt="Couple Photo" class="mx-auto rounded-lg w-full max-w-2xl object-cover shadow-lg">
     </section>
 
     <!-- Countdown Timer -->
     <section data-aos="fade-up" class="py-12 px-6 bg-white text-center">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Countdown to Our Day</h2>
       <div id="countdown" class="flex justify-center space-x-6 text-blue-600 font-mono text-4xl">
-        <div>
-          <div id="days" class="font-bold"></div>
-          <div class="text-sm text-gray-600">Days</div>
-        </div>
-        <div>
-          <div id="hours" class="font-bold"></div>
-          <div class="text-sm text-gray-600">Hours</div>
-        </div>
-        <div>
-          <div id="minutes" class="font-bold"></div>
-          <div class="text-sm text-gray-600">Minutes</div>
-        </div>
-        <div>
-          <div id="seconds" class="font-bold"></div>
-          <div class="text-sm text-gray-600">Seconds</div>
-        </div>
+        <div><div id="days" class="font-bold"></div><div class="text-sm text-gray-600">Days</div></div>
+        <div><div id="hours" class="font-bold"></div><div class="text-sm text-gray-600">Hours</div></div>
+        <div><div id="minutes" class="font-bold"></div><div class="text-sm text-gray-600">Minutes</div></div>
+        <div><div id="seconds" class="font-bold"></div><div class="text-sm text-gray-600">Seconds</div></div>
       </div>
     </section>
-
- 
 
     <!-- Comments / Guestbook -->
     <section data-aos="fade-up" class="py-12 px-6 max-w-xl mx-auto">
@@ -129,27 +148,57 @@
       <div id="pagination" class="flex justify-center space-x-2 mt-4"></div>
     </section>
 
+    <!-- Gallery -->
     <section data-aos="fade-up" class="py-12 px-6 bg-gray-50">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Gallery</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
-          <img src="img/DSC07948.JPG" alt="Gallery 1" class="w-full h-48 object-cover rounded-lg shadow-md">
-          <img src="img/DSC08036.JPG" alt="Gallery 2" class="w-full h-48 object-cover rounded-lg shadow-md">
-          <img src="img/DSC08113.JPG" alt="Gallery 3" class="w-full h-48 object-cover rounded-lg shadow-md">
-          <img src="img/DSC08115 copy.jpg" alt="Gallery 4" class="w-full h-48 object-cover rounded-lg shadow-md">
-          <img src="img/DSC08144 copy.jpg" alt="Gallery 5" class="w-full h-48 object-cover rounded-lg shadow-md">
-        </div>
-      </section>
-
-    <!-- Footer -->
-    <footer data-aos="fade-up" class="py-6 bg-gray-100 text-center text-sm text-gray-600">
-      &copy; 2025 Undangan Digital by Anda
-    </footer>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Gallery</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+        <img src="img/DSC07948.JPG" alt="Gallery 1" class="w-full h-48 object-cover rounded-lg shadow-md">
+        <img src="img/DSC08036.JPG" alt="Gallery 2" class="w-full h-48 object-cover rounded-lg shadow-md">
+        <img src="img/DSC08113.JPG" alt="Gallery 3" class="w-full h-48 object-cover rounded-lg shadow-md">
+        <img src="img/DSC08115 copy.jpg" alt="Gallery 4" class="w-full h-48 object-cover rounded-lg shadow-md">
+        <img src="img/DSC08144 copy.jpg" alt="Gallery 5" class="w-full h-48 object-cover rounded-lg shadow-md">
+      </div>
+    </section>
   </div>
 
-  <!-- AOS Script -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
   <script>
-    AOS.init({ duration: 800, once: true });
+    // Preload images and update loading screen
+    const images = Array.from(document.images);
+    const totalImages = images.length;
+    let loadedCount = 0;
+    const percentEl = document.getElementById('percent');
+    const barInner = document.getElementById('bar-inner');
+
+    if (totalImages === 0) finishLoading();
+    images.forEach(img => {
+      if (img.complete) increment();
+      else {
+        img.addEventListener('load', increment);
+        img.addEventListener('error', increment);
+      }
+    });
+
+    function increment() {
+      loadedCount++;
+      const percent = Math.floor((loadedCount / totalImages) * 100);
+      percentEl.textContent = percent + '%';
+      barInner.style.width = percent + '%';
+      if (loadedCount === totalImages) finishLoading();
+    }
+
+    function finishLoading() {
+      // slight delay for UX
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+          document.getElementById('loading-screen').style.display = 'none';
+          document.getElementById('landing').classList.remove('hidden');
+          AOS.init({ duration: 800, once: true });
+        }, 600);
+      }, 300);
+    }
 
     function showInvitation() {
       document.getElementById('landing').classList.add('hidden');
@@ -168,18 +217,13 @@
           document.getElementById('countdown').innerHTML = '<span class="text-xl">Event Started</span>';
           return;
         }
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById('days').textContent = days;
-        document.getElementById('hours').textContent = hours;
-        document.getElementById('minutes').textContent = minutes;
-        document.getElementById('seconds').textContent = seconds;
+        document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24));
+        document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000);
       }, 1000);
     }
 
-    // Comments persistence
     const form = document.getElementById('commentForm');
     const commentsContainer = document.getElementById('commentsContainer');
     const paginationEl = document.getElementById('pagination');
