@@ -3,92 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Wedding Invitation</title>
+  <title>Wedding WIDIANTARA & ARPIYANTI</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- AOS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
-<body class="font-sans">
+<body class="font-sans overflow-x-hidden">
 
- 
+  <!-- Landing -->
   <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('DSC08164.JPG');">
     <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4 text-center -mt-8" data-aos="fade-down">
       <h2 class="text-white text-xl md:text-2xl mb-2">THE WEDDING CEREMONY OF</h2>
-      <h1 class="text-white text-4xl md:text-6xl font-bold mb-2"> WIDIANTARA & ARPIYANTI</h1>
-      <p class="text-white text-lg md:text-2xl mt-8">20 Juli 2025</p>
-      <button onclick="showInvitation()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition mt-[350px]">
-        Invitation
-      </button>
+      <h1 class="text-blue-700 text-4xl md:text-6xl font-bold mb-2">WIDIANTARA & ARPIYANTI</h1>
+      <p class="text-white text-lg md:text-2xl mt-8">27 Juni 2025</p>
+      <button onclick="showInvitation()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition mt-[350px]">Invitation</button>
     </div>
   </div>
 
-
   <div id="invitation" class="hidden">
-
- 
+    <!-- Hero Section -->
     <section
-    data-aos="fade-up"
-    class="min-h-screen flex flex-col justify-center items-center text-center px-4 bg-cover bg-center bg-no-repeat"
-    style="background-image: url('img/DSC08171.JPG');"
-  >
-    <div class=" bg-opacity-70 p-6 rounded-lg">
-      <h1 class="text-4xl md:text-6xl font-bold text-blue-800">Undangan Pernikahan</h1>
-      <p class="mt-4 text-lg md:text-xl mt-[450px] text-gray-700">
-        Kami mengundang Anda untuk hadir di hari bahagia kami
-      </p>
-    </div>
-  </section>
-  
-
-    <!-- Groom Section -->
-    <section data-aos="fade-right" class="py-12 px-6 bg-white text-center">
-      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengantin Pria</h2>
-      <img src="https://via.placeholder.com/200x200.png?text=Groom" alt="Groom" class="mx-auto rounded-full w-40 h-40 object-cover mb-4 shadow-md">
-      <p class="text-gray-700">Andi</p>
-      <p class="text-gray-500">Putra dari Bapak Joko & Ibu Siti</p>
+      data-aos="fade-up"
+      class="relative min-h-screen flex justify-end items-end text-center bg-cover bg-center bg-no-repeat animate-zoom"
+      style="background-image: url('img/DSC08115 copy.jpg');"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div class="relative z-10 p-6 rounded-lg mb-10 text-white">
+        <p class="text-lg md:text-xl tracking-widest uppercase">The Wedding Ceremony Of</p>
+        <h1 class="text-2xl md:text-5xl font-bold text-blue-600 mt-2 whitespace-nowrap">WIDIANTARA & ARPIYANTI</h1>
+        <p class="mt-2 text-lg md:text-xl font-medium">Jumat, 27 Juni 2025</p>
+        <p class="mt-1 text-sm md:text-base font-medium">Pukul 11.00 WIB</p>
+      </div>
     </section>
 
-    <!-- Bride Section -->
-    <section data-aos="fade-left" class="py-12 px-6 bg-blue-50 text-center">
-      <h2 class="text-2xl font-semibold text-blue-700 mb-4">Pengantin Wanita</h2>
-      <img src="https://via.placeholder.com/200x200.png?text=Bride" alt="Bride" class="mx-auto rounded-full w-40 h-40 object-cover mb-4 shadow-md">
-      <p class="text-gray-700">Sinta</p>
-      <p class="text-gray-500">Putri dari Bapak Agus & Ibu Lina</p>
+    <!-- Zoom Effect -->
+    <style>
+      @keyframes zoomEffect { 0% { transform: scale(1.2); } 100% { transform: scale(1); } }
+      .animate-zoom { animation: zoomEffect 4s ease-out forwards; }
+    </style>
+
+    <!-- Couple Info -->
+    <section class="py-16 px-6 flex justify-center items-center">
+      <div data-aos="zoom-in" class="relative bg-blue-900 backdrop-blur-md shadow-lg border border-white/30 w-full max-w-5xl px-10 py-12 text-center 
+                  flex flex-col md:flex-row items-center justify-around 
+                  rounded-b-full rounded-t-3xl">
+
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/60 rounded-full"></div>
+
+        <!-- Groom -->
+        <div class="flex flex-col items-center max-w-xs">
+          <img src="img/DSC08048.JPG" alt="Groom" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
+          <h3 class="text-lg font-bold text-white tracking-wide">Kadek Widiantara</h3>
+          <p class="text-white/80 text-sm italic">Putra kedua dari</p>
+          <p class="text-white font-medium text-sm">Bapak I Nyoman Sarjana</p>
+          <p class="text-white font-medium text-sm mb-2">dan Ibu Ni Nyoman Subakti</p>
+          <p class="text-white/70 text-xs mb-4 text-center leading-relaxed">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
+          <a href="https://instagram.com/username" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-xs transition">Lihat Instagram</a>
+        </div>
+
+        <!-- Divider -->
+        <div class="hidden md:block w-px h-40 bg-white/60 mx-4"></div>
+        <div class="md:hidden w-32 h-px bg-white/60 my-6"></div>
+
+        <!-- Bride -->
+        <div class="flex flex-col items-center max-w-xs">
+          <img src="img/DSC08067.JPG" alt="Bride" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
+          <h3 class="text-lg font-bold text-white tracking-wide">Ni Made Arpiyanti</h3>
+          <p class="text-white/80 text-sm italic">Putri kedua dari</p>
+          <p class="text-white font-medium text-sm">Bapak I Nengah Rauh</p>
+          <p class="text-white font-medium text-sm mb-2">dan Ibu Ni Wayan Sri Ningsih</p>
+          <p class="text-white/70 text-xs mb-4 text-center leading-relaxed">Dusun Saap, Desa Manikliyu, Kec. Kintamani, Bangli</p>
+          <a href="https://instagram.com/username" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-xs transition">Lihat Instagram</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Place & Time Section -->
+    <!-- Place & Time -->
     <section data-aos="zoom-in" class="py-12 px-6 bg-white text-center">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Place & Time</h2>
-      <p class="text-gray-700 mb-2"><strong>📅 Tanggal:</strong> 20 Juli 2025</p>
-      <p class="text-gray-700 mb-2"><strong>⏰ Waktu:</strong> 10.00 WIB - Selesai</p>
-      <p class="text-gray-700 mb-4"><strong>📍 Lokasi:</strong> Gedung Serbaguna Mawar, Jakarta</p>
-      <a href="https://maps.google.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition">
-        Location
-      </a>
+      <p class="text-gray-700 mb-2"><strong>📅 Tanggal:</strong> 27 Juni 2025</p>
+      <p class="text-gray-700 mb-2"><strong>⏰ Waktu:</strong> 11.00 WIB - Selesai</p>
+      <p class="text-gray-700 mb-4"><strong>📍 Lokasi:</strong> Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
+      <a href="https://maps.google.com" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow transition">Location</a>
     </section>
 
     <!-- Couple Photo -->
     <section data-aos="fade-up" class="py-12 px-6 bg-blue-100 text-center">
-      <img src="https://via.placeholder.com/600x400.png?text=Foto+Couple" alt="Couple" class="mx-auto rounded-lg w-full max-w-2xl object-cover shadow-lg">
+      <img src="img/DSC08144 copy.jpg" alt="Couple" class="mx-auto rounded-lg w-full max-w-2xl object-cover shadow-lg">
     </section>
 
     <!-- Countdown Timer -->
     <section data-aos="fade-up" class="py-12 px-6 bg-white text-center">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Countdown to Our Day</h2>
-      <div id="countdown" class="text-3xl font-mono text-blue-600"></div>
+      <div id="countdown" class="flex justify-center space-x-6 text-blue-600 font-mono text-4xl">
+        <div>
+          <div id="days" class="font-bold"></div>
+          <div class="text-sm text-gray-600">Days</div>
+        </div>
+        <div>
+          <div id="hours" class="font-bold"></div>
+          <div class="text-sm text-gray-600">Hours</div>
+        </div>
+        <div>
+          <div id="minutes" class="font-bold"></div>
+          <div class="text-sm text-gray-600">Minutes</div>
+        </div>
+        <div>
+          <div id="seconds" class="font-bold"></div>
+          <div class="text-sm text-gray-600">Seconds</div>
+        </div>
+      </div>
     </section>
 
+ 
+
     <!-- Comments / Guestbook -->
-    <section data-aos="fade-up" class="py-12 px-6 bg-blue-50 max-w-xl mx-auto">
+    <section data-aos="fade-up" class="py-12 px-6 max-w-xl mx-auto">
       <h2 class="text-2xl font-semibold text-blue-700 mb-4 text-center">Leave a Message</h2>
       <form id="commentForm" class="space-y-4">
-        <textarea id="commentInput" rows="3" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Kirim doa dan harapan kamu..."></textarea>
+        <input type="text" id="nameInput" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Nama kamu" required />
+        <textarea id="commentInput" rows="3" class="w-full border border-gray-300 rounded-lg p-2" placeholder="Kirim doa dan harapan kamu..." required></textarea>
         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">Submit</button>
       </form>
-      <ul id="commentsList" class="mt-6 space-y-4">
-        <!-- comments will appear here -->
-      </ul>
+      <div id="commentsContainer" class="mt-6 space-y-6 max-h-80 overflow-y-auto"></div>
+      <div id="pagination" class="flex justify-center space-x-2 mt-4"></div>
     </section>
+
+    <section data-aos="fade-up" class="py-12 px-6 bg-gray-50">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Gallery</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4">
+          <img src="img/DSC07948.JPG" alt="Gallery 1" class="w-full h-48 object-cover rounded-lg shadow-md">
+          <img src="img/DSC08036.JPG" alt="Gallery 2" class="w-full h-48 object-cover rounded-lg shadow-md">
+          <img src="img/DSC08113.JPG" alt="Gallery 3" class="w-full h-48 object-cover rounded-lg shadow-md">
+          <img src="img/DSC08115 copy.jpg" alt="Gallery 4" class="w-full h-48 object-cover rounded-lg shadow-md">
+          <img src="img/DSC08144 copy.jpg" alt="Gallery 5" class="w-full h-48 object-cover rounded-lg shadow-md">
+        </div>
+      </section>
 
     <!-- Footer -->
     <footer data-aos="fade-up" class="py-6 bg-gray-100 text-center text-sm text-gray-600">
@@ -96,50 +146,106 @@
     </footer>
   </div>
 
-  <!-- AOS Script and Initialization -->
+  <!-- AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 800, once: true });
+
     function showInvitation() {
       document.getElementById('landing').classList.add('hidden');
       document.getElementById('invitation').classList.remove('hidden');
       startCountdown();
+      renderComments(1);
     }
 
-    // Countdown
     function startCountdown() {
-      const targetDate = new Date('2025-07-20T10:00:00');
-      const el = document.getElementById('countdown');
-      function update() {
-        const now = new Date();
-        const diff = targetDate - now;
-        if (diff <= 0) {
-          el.textContent = 'Hari ini adalah hari bahagia kami!';
-          clearInterval(interval);
+      const target = new Date('June 27, 2025 11:00:00').getTime();
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = target - now;
+        if (distance < 0) {
+          clearInterval(timer);
+          document.getElementById('countdown').innerHTML = '<span class="text-xl">Event Started</span>';
           return;
         }
-        const days = Math.floor(diff / (1000*60*60*24));
-        const hrs  = Math.floor((diff/(1000*60*60)) % 24);
-        const mins = Math.floor((diff/(1000*60)) % 60);
-        const secs = Math.floor((diff/1000) % 60);
-        el.textContent = `${days}d ${hrs}h ${mins}m ${secs}s`;
-      }
-      update();
-      const interval = setInterval(update, 1000);
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+      }, 1000);
     }
 
-    // Guestbook comments
-    document.getElementById('commentForm').addEventListener('submit', e => {
+    // Comments persistence
+    const form = document.getElementById('commentForm');
+    const commentsContainer = document.getElementById('commentsContainer');
+    const paginationEl = document.getElementById('pagination');
+    const COMMENTS_KEY = 'weddingComments';
+    const COMMENTS_PER_PAGE = 5;
+    let currentPage = 1;
+
+    function getStoredComments() {
+      const raw = localStorage.getItem(COMMENTS_KEY);
+      return raw ? JSON.parse(raw) : [];
+    }
+
+    function saveComments(comments) {
+      localStorage.setItem(COMMENTS_KEY, JSON.stringify(comments));
+    }
+
+    function addComment(name, comment) {
+      const comments = getStoredComments();
+      comments.unshift({ name, comment, timestamp: Date.now() });
+      saveComments(comments);
+      renderComments(1);
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function renderComments(page) {
+      const comments = getStoredComments();
+      const total = comments.length;
+      const pages = Math.ceil(total / COMMENTS_PER_PAGE) || 1;
+      if (page < 1) page = 1;
+      if (page > pages) page = pages;
+      currentPage = page;
+      const start = (page - 1) * COMMENTS_PER_PAGE;
+      const paged = comments.slice(start, start + COMMENTS_PER_PAGE);
+      commentsContainer.innerHTML = '';
+      paged.forEach(c => {
+        const div = document.createElement('div');
+        div.className = "border border-gray-300 rounded-lg p-4 bg-white shadow-sm";
+        div.innerHTML = `
+          <p class="font-semibold text-blue-700">${escapeHtml(c.name)}</p>
+          <p class="mt-1 text-gray-700 whitespace-pre-line">${escapeHtml(c.comment)}</p>
+        `;
+        commentsContainer.append(div);
+      });
+      paginationEl.innerHTML = '';
+      if (pages > 1) {
+        for (let i = 1; i <= pages; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = i;
+          btn.className = `px-3 py-1 rounded ${i === page ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-700'} hover:bg-blue-500 hover:text-white`;
+          btn.addEventListener('click', () => renderComments(i));
+          paginationEl.append(btn);
+        }
+      }
+    }
+
+    form.addEventListener('submit', e => {
       e.preventDefault();
-      const txt = document.getElementById('commentInput');
-      if (!txt.value.trim()) return;
-      const li = document.createElement('li');
-      li.className = 'border border-gray-200 rounded-lg p-3 bg-white';
-      li.textContent = txt.value.trim();
-      document.getElementById('commentsList').appendChild(li);
-      txt.value = '';
+      const name = document.getElementById('nameInput').value.trim();
+      const comment = document.getElementById('commentInput').value.trim();
+      if (!name || !comment) return alert('Mohon isi nama dan ucapan.');
+      addComment(name, comment);
+      form.reset();
     });
   </script>
-
 </body>
 </html>
