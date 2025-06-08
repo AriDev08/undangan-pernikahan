@@ -5,155 +5,153 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Widiantara & Arpiyanti</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .font-script { font-family: 'Dancing Script', cursive; }
+  </style>
 </head>
-<body class="bg-white text-gray-800 font-sans overflow-x-hidden">
+<body class="bg-black text-white overflow-x-hidden">
 
-  <!-- Landing -->
-  <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('DSC08164.JPG');">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center px-4 text-center -mt-8" data-aos="fade-down">
-      <h2 class="text-white text-xl md:text-2xl mb-2">THE WEDDING CEREMONY OF</h2>
-      <h1 class="text-blue-700 text-4xl md:text-6xl font-bold mb-2">WIDIANTARA & ARPIYANTI</h1>
-      <p class="text-white text-lg md:text-2xl mt-8">27 Juni 2025</p>
-      <button onclick="showInvitation()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg transition mt-[350px]">Invitation</button>
+  <!-- Audio Latar -->
+  <!-- Letakkan file audio Anda di folder "audio" dengan nama "wedding-music.mp3" -->
+  <audio id="bgMusic" src="audio/wedding-music.mp3" preload="auto" loop></audio>
+
+  <!-- Halaman Pembuka -->
+  <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('download-7-615x1024.jpeg');">
+    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center px-4 text-center">
+      <button onclick="showInvitation()" class="border-2 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg text-lg transition hover:bg-yellow-400 hover:text-black">
+        Buka Undangan
+      </button>
     </div>
   </div>
-  
 
   <!-- Isi Undangan -->
   <div id="invitation" class="hidden">
 
-    <!-- Hero -->
-    <section
-    data-aos="fade-up"
-    class="relative min-h-screen flex justify-center items-end text-center bg-cover bg-center bg-no-repeat animate-zoom"
-    style="background-image: url('img/DSC08115 copy.jpg');"
-  >
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-    <div class="relative z-10 p-6 rounded-lg mb-10 text-white">
-      <p class="text-lg md:text-xl tracking-widest uppercase">The Wedding Ceremony Of</p>
-      <h1 class="text-2xl md:text-5xl font-bold text-blue-600 mt-2 whitespace-nowrap">WIDIANTARA & ARPIYANTI</h1>
-      <p class="mt-2 text-lg md:text-xl font-medium">Jumat, 27 Juni 2025</p>
-      <p class="mt-1 text-sm md:text-base font-medium">Pukul 11.00 WIB</p>
-    </div>
-  </section>
-  
-
-    <section class="py-16 px-6 flex justify-center items-center">
-      <div data-aos="zoom-in" class="relative bg-blue-900 backdrop-blur-md shadow-lg border border-white/30 w-full max-w-5xl px-10 py-12 text-center 
-                  flex flex-col md:flex-row items-center justify-around 
-                  rounded-b-full rounded-t-3xl">
-
-        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/60 rounded-full"></div>
-
-        <!-- Groom -->
-        <div class="flex flex-col items-center max-w-xs">
-          <img src="img/DSC08048.JPG" alt="Groom" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
-          <h3 class="text-lg font-bold text-white tracking-wide">Kadek Widiantara</h3>
-          <p class="text-white/80 text-sm italic">Putra kedua dari</p>
-          <p class="text-white font-medium text-sm">Bapak I Nyoman Sarjana</p>
-          <p class="text-white font-medium text-sm mb-2">dan Ibu Ni Nyoman Subakti</p>
-          <p class="text-white/70 text-xs mb-4 text-center leading-relaxed">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
-          <a href="https://instagram.com/username" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-xs transition">Lihat Instagram</a>
-        </div>
-
-        <!-- Divider -->
-        <div class="hidden md:block w-px h-40 bg-white/60 mx-4"></div>
-        <div class="md:hidden w-32 h-px bg-white/60 my-6"></div>
-
-        <!-- Bride -->
-        <div class="flex flex-col items-center max-w-xs">
-          <img src="img/DSC08067.JPG" alt="Bride" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-white mb-4">
-          <h3 class="text-lg font-bold text-white tracking-wide">Ni Made Arpiyanti</h3>
-          <p class="text-white/80 text-sm italic">Putri kedua dari</p>
-          <p class="text-white font-medium text-sm">Bapak I Nengah Rauh</p>
-          <p class="text-white font-medium text-sm mb-2">dan Ibu Ni Wayan Sri Ningsih</p>
-          <p class="text-white/70 text-xs mb-4 text-center leading-relaxed">Dusun Saap, Desa Manikliyu, Kec. Kintamani, Bangli</p>
-          <a href="https://instagram.com/username" target="_blank" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full text-xs transition">Lihat Instagram</a>
-        </div>
-      </div>
-    </section>
-      
-
-    <!-- Waktu & Tempat -->
-   <!-- Waktu & Tempat -->
-   <section class="bg-gray-50 text-center py-8 px-4">
-    <h2 class="text-lg font-semibold mb-2">📍 Lokasi & Waktu</h2>
-    <p class="text-sm mb-1">27 Juni 2025</p>
-    <p class="text-sm mb-1">Pukul 11.00 WIB - Selesai</p>
-    <p class="text-sm mb-3">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
-    <a href="https://maps.google.com" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm mb-6">Lihat Lokasi</a>
-    
-    <!-- Container countdown -->
-    <div id="countdown" class="flex justify-center gap-4 text-gray-700 font-mono text-lg"></div>
-
-
-    <!-- Galeri -->
-    <section class="py-8 px-4">
-      <h2 class="text-center text-lg font-semibold mb-4">📸 Galeri</h2>
-      <div class="grid grid-cols-2 gap-2">
-        <img src="img/DSC07948.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        <img src="img/DSC08036.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        <img src="img/DSC08113.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        <img src="img/DSC08144 copy.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        <img src="img/DSC08176.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        <img src="img/lastimg.webp" class="rounded-lg object-cover h-32 w-full" loading="lazy" />
-        
+    <!-- Halaman Utama -->
+    <section class="relative min-h-screen flex justify-center items-end text-center bg-cover bg-center bg-no-repeat"
+      style="background-image: url('img/DSC08115 copy.jpg');">
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="relative z-10 p-6 rounded-lg mb-10">
+        <p class="text-gray-300 text-lg tracking-widest uppercase">The Wedding Ceremony Of</p>
+        <h1 class="text-3xl md:text-5xl font-script font-bold text-yellow-400 mt-2">WIDIANTARA & ARPIYANTI</h1>
+        <p class="mt-2 text-gray-300 text-lg">Jumat, 27 Juni 2025</p>
+        <p class="mt-1 text-gray-400 text-sm">Pukul 11.00 WIB</p>
       </div>
     </section>
 
-  </div>
+    <!-- Profil Mempelai -->
+    <section style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background/7.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;" class="py-16 px-6 bg-cover flex justify-center items-center">
+      <div class="relative bg-black border border-yellow-400 w-full max-w-5xl px-10 py-12 text-center rounded-b-full rounded-t-3xl shadow-xl">
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-yellow-400 rounded-full"></div>
+        <div class="flex flex-col md:flex-row justify-around items-center text-gray-300">
+          <!-- Groom -->
+          <div class="flex flex-col items-center max-w-xs">
+            <img src="img/DSC08048.JPG" alt="Groom" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-yellow-400 mb-4">
+            <h3 class="text-lg font-script font-bold text-yellow-400">Kadek Widiantara</h3>
+            <p class="text-sm italic">Putra kedua dari</p>
+            <p class="text-sm">Bapak I Nyoman Sarjana</p>
+            <p class="text-sm mb-2">dan Ibu Ni Nyoman Subakti</p>
+            <p class="text-xs text-center leading-relaxed text-gray-400">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
+            <a href="https://instagram.com/Sentul_95" target="_blank" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs transition hover:bg-yellow-300">Lihat Instagram</a>
+          </div>
+          <!-- Pemisah -->
+          <div class="hidden md:block w-px h-40 bg-yellow-400 mx-4"></div>
+          <div class="md:hidden w-32 h-px bg-yellow-400 my-6"></div>
+          <!-- Bride -->
+          <div class="flex flex-col items-center max-w-xs">
+            <img src="img/DSC08067.JPG" alt="Bride" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-yellow-400 mb-4">
+            <h3 class="text-lg font-script font-bold text-yellow-400">Ni Made Arpiyanti</h3>
+            <p class="text-sm italic">Putri kedua dari</p>
+            <p class="text-sm">Bapak I Nengah Rauh</p>
+            <p class="text-sm mb-2">dan Ibu Ni Wayan Sri Ningsih</p>
+            <p class="text-xs text-center leading-relaxed text-gray-400">Dusun Saap, Desa Manikliyu, Kec. Kintamani, Bangli</p>
+            <a href="https://instagram.com/Arpiyanti04" target="_blank" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs transition hover:bg-yellow-300">Lihat Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lokasi, Countdown, & Galeri -->
+    <section class="text-center py-12 px-4 bg-cover text-gray-300" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background/7.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <!-- Lokasi & Waktu -->
+      <h2 class="text-lg font-semibold text-white mb-2">📍 Lokasi & Waktu</h2>
+      <p class="text-sm">27 Juni 2025</p>
+      <p class="text-sm">Pukul 11.00 WIB - Selesai</p>
+      <p class="text-sm mb-6 text-gray-400">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
+      <a href="https://maps.google.com" target="_blank" class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-lg text-sm mb-8 hover:bg-yellow-300">Lihat Lokasi</a>
+
+      <!-- Countdown -->
+      <div id="countdown" class="flex justify-center gap-4 font-mono text-lg mb-12">
+        <!-- JS akan merender countdown di sini -->
+      </div>
+
+      <!-- Galeri -->
+      <h2 class="text-center text-lg font-semibold mb-4 text-yellow-400">Galeri</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto pb-8">
+        <img src="img/DSC07948.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+        <img src="img/DSC08036.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+        <img src="img/DSC08113.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+        <img src="img/DSC08144 copy.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+        <img src="img/DSC08176.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+        <img src="img/lastimg.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
+      </div>
+    </section>
+
+  </div> <!-- end invitation -->
 
   <!-- Script -->
   <script>
+    const bgMusic = document.getElementById('bgMusic');
+
     function showInvitation() {
       document.getElementById('landing').classList.add('hidden');
       document.getElementById('invitation').classList.remove('hidden');
+      // Mulai putar musik setelah klik
+      bgMusic.play().catch(err => console.warn('Playback error:', err));
     }
-  
+
     function updateCountdown() {
-  const countdownEl = document.getElementById('countdown');
-  const weddingDate = new Date('2025-06-27T11:00:00');
+      const countdownEl = document.getElementById('countdown');
+      const weddingDate = new Date('2025-06-27T11:00:00');
+      const now = new Date();
+      const diff = weddingDate - now;
 
-  const now = new Date();
-  const diff = weddingDate - now;
+      if (diff <= 0) {
+        countdownEl.textContent = "Hari H telah tiba!";
+        clearInterval(intervalId);
+        return;
+      }
 
-  if (diff <= 0) {
-    countdownEl.textContent = "Hari H telah tiba!";
-    clearInterval(intervalId);
-    return;
-  }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
+      countdownEl.innerHTML = `
+        <div class="bg-black bg-opacity-50 text-white rounded-lg px-4 py-2 min-w-[70px]">
+          <div class="text-2xl font-bold">${days}</div>
+          <div class="text-sm">Hari</div>
+        </div>
+        <div class="bg-black bg-opacity-50 text-white rounded-lg px-4 py-2 min-w-[70px]">
+          <div class="text-2xl font-bold">${hours}</div>
+          <div class="text-sm">Jam</div>
+        </div>
+        <div class="bg-black bg-opacity-50 text-white rounded-lg px-4 py-2 min-w-[70px]">
+          <div class="text-2xl font-bold">${minutes}</div>
+          <div class="text-sm">Menit</div>
+        </div>
+        <div class="bg-black bg-opacity-50 text-white rounded-lg px-4 py-2 min-w-[70px]">
+          <div class="text-2xl font-bold">${seconds}</div>
+          <div class="text-sm">Detik</div>
+        </div>
+      `;
+    }
 
-  // Struktur kotak untuk masing-masing waktu
-  countdownEl.innerHTML = `
-    <div class="bg-blue-100 rounded-lg px-4 py-2 shadow-md min-w-[70px]">
-      <div class="text-2xl font-bold text-blue-600">${days}</div>
-      <div class="text-sm">Hari</div>
-    </div>
-    <div class="bg-blue-100 rounded-lg px-4 py-2 shadow-md min-w-[70px]">
-      <div class="text-2xl font-bold text-blue-600">${hours}</div>
-      <div class="text-sm">Jam</div>
-    </div>
-    <div class="bg-blue-100 rounded-lg px-4 py-2 shadow-md min-w-[70px]">
-      <div class="text-2xl font-bold text-blue-600">${minutes}</div>
-      <div class="text-sm">Menit</div>
-    </div>
-    <div class="bg-blue-100 rounded-lg px-4 py-2 shadow-md min-w-[70px]">
-      <div class="text-2xl font-bold text-blue-600">${seconds}</div>
-      <div class="text-sm">Detik</div>
-    </div>
-  `;
-}
-
-  
-    // Update countdown setiap detik
     updateCountdown();
     const intervalId = setInterval(updateCountdown, 1000);
   </script>
-  
+
 </body>
 </html>
