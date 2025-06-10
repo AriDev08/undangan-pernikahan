@@ -6,53 +6,59 @@
   <title>Widiantara & Arpiyanti</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     body { font-family: 'Poppins', sans-serif; }
     .font-script { font-family: 'Dancing Script', cursive; }
+
+    .font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-great {
+  font-family: 'Great Vibes', cursive;
+}
   </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
 
-  <!-- Audio Latar -->
-  <!-- Letakkan file audio Anda di folder "audio" dengan nama "wedding-music.mp3" -->
   <audio id="bgMusic" src="Ed Sheeran - Perfect-yt.savetube.me.mp3" preload="auto" loop></audio>
 
-  <!-- Halaman Pembuka -->
-  <div id="landing" class="fixed inset-0 bg-cover bg-center" style="background-image: url('download-7-615x1024.jpeg');">
-    <div class="absolute inset-0 bg-black bg-opacity-60 flex flex-col justify-center items-center px-4 text-center">
-      <div class="relative z-10 p-6 rounded-lg mb-10">
-        <p class="text-gray-300 text-lg tracking-widest uppercase">The Wedding Ceremony Of</p>
-        <h1 class="text-3xl md:text-5xl font-script font-bold text-yellow-400 mt-2">WIDIANTARA & ARPIYANTI</h1>
-        <p class="mt-2 text-gray-300 text-lg">Jumat, 27 Juni 2025</p>
-        <p class="mt-1 text-gray-400 text-sm">Pukul 11.00 WIB</p>
-      </div>
-      <button onclick="showInvitation()" class="border-2 mt-[70%] border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg text-lg transition hover:bg-yellow-400 hover:text-black">
-        Buka Undangan
-      </button>
-    </div>
-  </div>
 
-  <!-- Isi Undangan -->
+  <div id="landing" class="fixed inset-0 bg-cover bg-center flex flex-col items-center justify-end" style="background-image: url('img/DSC08144 copy.webp'); background-position: -110px center;"
+  
+  >
+  
+    <div class="relative z-10 p-6 rounded-lg mb-[500px]">
+      <img src="hiasan-removebg-preview.png" alt="">
+    </div>
+  
+    <button onclick="showInvitation()" class="border-2 mb-[100px] border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg text-lg transition hover:bg-yellow-400 hover:text-black">
+      Buka Undangan
+    </button>
+  
+  </div>
+  
+
   <div id="invitation" class="hidden">
 
-    <!-- Halaman Utama -->
+
     <section class="relative min-h-screen flex justify-center items-end text-center bg-cover bg-center bg-no-repeat"
-      style="background-image: url('img/DSC08115 copy.jpg');">
-      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
-      <div class="relative z-10 p-6 rounded-lg mb-10">
-        <p class="text-gray-300 text-lg tracking-widest uppercase">The Wedding Ceremony Of</p>
-        <h1 class="text-3xl md:text-5xl font-script font-bold text-yellow-400 mt-2">WIDIANTARA & ARPIYANTI</h1>
-        <p class="mt-2 text-gray-300 text-lg">Jumat, 27 Juni 2025</p>
-        <p class="mt-1 text-gray-400 text-sm">Pukul 11.00 WIB</p>
+    style="background-image: url('DSC08136 copy.webp'); background-position: -120px center;">
+  
+      <div class="relative z-10 p-6 rounded-lg mb-[700px]">
+        <img src="hiasan-removebg-preview.png" alt="">
       </div>
     </section>
 
-    <!-- Profil Mempelai -->
+
     <section style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background/7.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;" class="py-16 px-6 bg-cover flex justify-center items-center">
       <div class="relative bg-black border border-yellow-400 w-full max-w-5xl px-10 py-12 text-center rounded-b-full rounded-t-3xl shadow-xl">
         <div class="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-1 bg-yellow-400 rounded-full"></div>
         <div class="flex flex-col md:flex-row justify-around items-center text-gray-300">
-          <!-- Groom -->
+
           <div class="flex flex-col items-center max-w-xs">
             <img src="img/DSC08048.JPG" alt="Groom" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-yellow-400 mb-4">
             <h3 class="text-lg font-script font-bold text-yellow-400">Kadek Widiantara</h3>
@@ -60,12 +66,12 @@
             <p class="text-sm">Bapak I Nyoman Sarjana</p>
             <p class="text-sm mb-2">dan Ibu Ni Nyoman Subakti</p>
             <p class="text-xs text-center leading-relaxed text-gray-400">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
-            <a href="https://instagram.com/Sentul_95" target="_blank" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs transition hover:bg-yellow-300">Lihat Instagram</a>
+            <a href="https://www.instagram.com/sentul_95/" target="_blank" class="mt-2 bg-yellow-400 text-black px-4 py-2 rounded-full text-xs transition hover:bg-yellow-300">Lihat Instagram</a>
           </div>
-          <!-- Pemisah -->
+
           <div class="hidden md:block w-px h-40 bg-yellow-400 mx-4"></div>
           <div class="md:hidden w-32 h-px bg-yellow-400 my-6"></div>
-          <!-- Bride -->
+
           <div class="flex flex-col items-center max-w-xs">
             <img src="img/DSC08067.JPG" alt="Bride" class="rounded-full w-32 h-32 object-cover shadow-md border-4 border-yellow-400 mb-4">
             <h3 class="text-lg font-script font-bold text-yellow-400">Ni Made Arpiyanti</h3>
@@ -78,22 +84,17 @@
         </div>
       </div>
     </section>
-
-    <!-- Lokasi, Countdown, & Galeri -->
     <section class="text-center py-12 px-4 bg-cover text-gray-300" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('background/7.webp'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-      <!-- Lokasi & Waktu -->
       <h2 class="text-lg font-semibold text-white mb-2">📍 Lokasi & Waktu</h2>
       <p class="text-sm">27 Juni 2025</p>
       <p class="text-sm">Pukul 11.00 WIB - Selesai</p>
       <p class="text-sm mb-6 text-gray-400">Br. Karang Suung Kelod, Peninjoan, Tembuku, Bangli</p>
       <a href="https://maps.google.com" target="_blank" class="inline-block bg-yellow-400 text-black px-4 py-2 rounded-lg text-sm mb-8 hover:bg-yellow-300">Lihat Lokasi</a>
 
-      <!-- Countdown -->
       <div id="countdown" class="flex justify-center gap-4 font-mono text-lg mb-12">
-        <!-- JS akan merender countdown di sini -->
+
       </div>
 
-      <!-- Galeri -->
       <h2 class="text-center text-lg font-semibold mb-4 text-yellow-400">Galeri</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-5xl mx-auto pb-8">
         <img src="img/DSC07948.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
@@ -105,16 +106,25 @@
       </div>
     </section>
 
-  </div> <!-- end invitation -->
+    <footer class="bg-black border-t border-yellow-400 text-yellow-400 py-6 text-center font-montserrat">
+      <div class="space-y-2">
+        <p class="text-lg font-semibold">Saweran</p>
+        <p class="text-base">BCA</p>
+        <p class="text-base">KADEK WIDIANTARA</p>
+        <p class="text-base">No: 4160673929</p>
+        <p class="mt-4 text-sm font-script italic text-yellow-300">Om santi santi sati om</p>
+      </div>
+    </footer>
 
-  <!-- Script -->
+  </div> 
+
   <script>
     const bgMusic = document.getElementById('bgMusic');
 
     function showInvitation() {
       document.getElementById('landing').classList.add('hidden');
       document.getElementById('invitation').classList.remove('hidden');
-      // Mulai putar musik setelah klik
+
       bgMusic.play().catch(err => console.warn('Playback error:', err));
     }
 
