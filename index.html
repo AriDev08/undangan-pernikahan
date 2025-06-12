@@ -13,6 +13,15 @@
     body { font-family: 'Poppins', sans-serif; }
     .font-script { font-family: 'Dancing Script', cursive; }
 
+    @layer utilities {
+  @media (max-width: 390px) and (max-height: 844px) {
+    .iphone14-mt {
+      margin-top: 1000px; 
+    }
+  }
+}
+
+
     .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
@@ -26,20 +35,26 @@
 
   <audio id="bgMusic" src="Ed Sheeran - Perfect-yt.savetube.me.mp3" preload="auto" loop></audio>
 
+  <div id="landing"
+  class="fixed inset-0 bg-cover bg-no-repeat bg-center w-screen h-screen flex flex-col items-center justify-end"
+  style="background-image: url('DSC08136 copy.webp');">
 
-  <div id="landing" class="fixed inset-0 bg-cover bg-center flex flex-col items-center justify-end" style="background-image: url('img/DSC08144 copy.webp'); background-position: -110px center;"
-  
-  >
-  
-    <div class="relative z-10 p-6 rounded-lg mb-[500px]">
-      <img src="hiasan-removebg-preview.png" alt="">
-    </div>
-  
-    <button onclick="showInvitation()" class="border-2 mb-[100px] border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg text-lg transition hover:bg-yellow-400 hover:text-black">
-      Buka Undangan
-    </button>
-  
+  <!-- Hiasan besar, full width, tetap di atas -->
+  <div class="absolute top-0 left-1/2 transform -translate-x-1/2 z-10 w-full flex justify-center mt-4">
+    <img src="hiasan-removebg-preview.png" alt=""
+      class="w-[90vw] max-w-[700px] h-auto object-contain">
   </div>
+
+  <!-- Tombol -->
+  <button onclick="showInvitation()"
+    class="border-2 mb-12 border-yellow-400 text-yellow-400 px-6 py-3 rounded-lg text-lg transition hover:bg-yellow-400 hover:text-black z-10">
+    Buka Undangan
+  </button>
+</div>
+
+
+
+
   
 
   <div id="invitation" class="hidden">
@@ -105,16 +120,6 @@
         <img src="img/lastimg.webp" class="rounded-lg object-cover h-40 w-full" loading="lazy" />
       </div>
     </section>
-
-    <footer class="bg-black border-t border-yellow-400 text-yellow-400 py-6 text-center font-montserrat">
-      <div class="space-y-2">
-        <p class="text-lg font-semibold">Saweran</p>
-        <p class="text-base">BCA</p>
-        <p class="text-base">KADEK WIDIANTARA</p>
-        <p class="text-base">No: 4160673929</p>
-        <p class="mt-4 text-sm font-script italic text-yellow-300">Om santi santi sati om</p>
-      </div>
-    </footer>
 
   </div> 
 
